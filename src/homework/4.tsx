@@ -13,7 +13,7 @@ type MenuSelected = {selectedMenu:SelectedMenu
 }
 
 const MenuSelectedContext = createContext<MenuSelected>({
-  selectedMenu: {id: "second"},
+  selectedMenu: {} as SelectedMenu,
 });
 
 // Додайте тип MenuAction
@@ -33,7 +33,7 @@ function MenuProvider({ children }: PropsProvider) {
   // Додати тип для SelectedMenu він повинен містити { id }
 
   
-  const [selectedMenu, setSelectedMenu] = useState<SelectedMenu>({id: "second"});
+  const [selectedMenu, setSelectedMenu] = useState<SelectedMenu>({} as SelectedMenu);
 
   const menuContextAction = useMemo(
     () => ({
